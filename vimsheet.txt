@@ -1,26 +1,30 @@
-NORMAL MODE                            VISUAL MODE                 INSERT MODE                   SEARCH AND REPLACE                   
---------------------------------------------------------------------------------------------------------------------------
-h/j/k/l    - Move                      v        - Visual mode      i   - Insert before cursor    /<text> - Search                         
-w/b        - Next/prev word            V        - Visual line mode I   - Insert at line start    n/N     - Next/prev match
-gg/G       - Top/Bottom                <Ctrl-v> - Block visual     a   - Append after cursor     :%s/old/new/g   - Replace in file
-0/^/$      - Line start/end            y        - Yank (copy)      A   - Append at line end      :%s/old/new/gc  - Replace w/ confirm
-<number>G  - Go to line                d        - Delete selection o   - Open new line below
-H/M/L      - High/Mid/Low              c        - Change selection O   - Open new line above
-:number    - Jump to line              >/<      - Indent/Outdent   <Esc> - Exit insert mode
-}/{ 	   - Next/previous paragraph   U        - Make uppercase 
-^d/u	   - Down/up halfpage          u        - Make lowercase
-^f/b	   - Down/up page
-dw/de      - Delete word     
-dd         - Delete line      
-D          - Del. to EOL    
-x          - Del. char      
-c[move]    - Change text    
-cc         - Change line    
-C          - Change to EOL  
-J          - Join lines     
-.          - Repeat cmd     
-,;	   - Repeat movement
-
+NORMAL MODE                            VISUAL MODE                 INSERT MODE                   SEARCH AND REPLACE              
+---------------------------------------------------------------------------------------------------------------------------------
+h/j/k/l    - Move                      v        - Visual mode        i   - Insert before cursor    /<text> - Search                
+w/b        - Next/prev word            V        - Visual line mode   I   - Insert at line start    n/N     - Next/prev match
+gg/G       - Top/Bottom                <Ctrl-v> - Block visual       a   - Append after cursor     :%s/old/new/g   - Replace in file
+0/^/$      - Line start/end            y        - Yank (copy)        A   - Append at line end      :%s/old/new/gc  - Replace w/ confirm
+<number>G  - Go to line                d        - Delete selection   o   - Open new line below                                      
+H/M/L      - High/Mid/Low              c        - Change selection   O   - Open new line above                                      
+:number    - Jump to line              >/<      - In/Outdent       <Esc> - Exit insert mode                                       
+}/{ 	   - Next/previous paragraph   U        - Make uppercase     ea  - Insert at end of word                                                              
+^d/u	   - Down/up halfpage          u        - Make lowercase     s   - Substitute character                                                              
+^f/b	   - Down/up page              gv	- Reselect last      S   - Substitute line                                                              
+dw/de      - Delete word               o 	- Opposite area      C   - Substitute line from cursor position                                                              
+dd         - Delete line                                                                                                         
+D          - Del. to EOL                                                                                                          
+x          - Del. char                                                                                                            
+c[move]    - Change text                                                                                                          
+cc         - Change line                                                                                                          
+C          - Change to EOL                                                                                                        
+J          - Join lines                                                                                                           
+.          - Repeat cmd                                                                                                           
+;	   - Repeat movement                                                                                                      
+m<n>	   -Place a tag marking the line with <n>
+,<n>	   - Go to tag marked <n>
+t/T	   - Go to next/previous tag
+p/P        - Paste after/before  
+gp/P	   - Paste after/before and put cursor after new text
 WINDOW MGMT                 BUFFERS & TABS              UNDO & REDO             FILE MANAGEMENT			MISC 
 ----------------------------------------------------------------------------------------------------------------------
 :split     - Horiz split    :ls     - List buffers     u   - Undo              :w	- Save file            .	 - Repeat last command
@@ -28,4 +32,22 @@ WINDOW MGMT                 BUFFERS & TABS              UNDO & REDO             
 <Ctrl-w> h/j/k/l - Move     :bprev  - Prev buffer                              :wq	- Save and quit	       <Ctrl-g>	 - Show file info
 <Ctrl-w> c  - Close win     :tabnew - New tab                                  :e <file>- Open file            :r <file> - Insert file
 <Ctrl-w> =  - Equalize      gt/gT   - Next/prev tab                            :ls	- List buffers
+----------------------------------------------------------------------------------------------------------------------
+^ means hold Ctrl while pressing key
+Write pretty much any number before any action to repeat it n times example 15p pastes 15 times.
 
+TODO: 
+Yanking 
+yw
+yiw
+yaw
+yi>
+
+Autocomplete current word ^n 
+^p move back autocomplete 
+
+macros
+
+Tags
+
+Find close brackets {} () []
